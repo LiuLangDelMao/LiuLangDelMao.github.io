@@ -74,7 +74,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -195,10 +195,67 @@
 
       <div class="body-wrap">
   
-    <article id="post-Linux常用命令（1）" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-更改yum源" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/04/Linux常用命令（1）/" class="article-date">
+      <a href="/2016/08/04/更改yum源/" class="article-date">
+  	<time datetime="2016-08-04T09:07:06.000Z" itemprop="datePublished">2016-08-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/04/更改yum源/">更改yum源</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##简单三步完成yum源的更改</p>
+<p>###1、首先备份/etc/yum.repos.d/CentOS-Base.repo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">命令：mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo_backup</div></pre></td></tr></table></figure></p>
+<p>###2、根据CentOS不同版本选择下载对应的repo文件，放到/etc/yum.repos.d/ 目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">命令：<span class="built_in">cd</span> /etc/yum.repos.d/</div><div class="line">      wget http://mirrors.163.com/.help/CentOS6-Base-163.repo</div></pre></td></tr></table></figure></p>
+<p>###3、最后执行yum makecache生成缓存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">命令：yum makecache</div></pre></td></tr></table></figure></p>
+<p>好了，yum源的更改已经完成</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Linux常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/04/Linux常用命令/" class="article-date">
   	<time datetime="2016-08-04T03:31:41.979Z" itemprop="datePublished">2016-08-04</time>
 </a>
     </div>
@@ -212,7 +269,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/04/Linux常用命令（1）/">Linux常用命令（1）</a>
+      <a class="article-title" href="/2016/08/04/Linux常用命令/">Linux常用命令（1）</a>
     </h1>
   
 
@@ -222,7 +279,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="文件的压缩"><a href="#文件的压缩" class="headerlink" title="文件的压缩"></a>文件的压缩</h2><h3 id="常见的压缩文件扩展名"><a href="#常见的压缩文件扩展名" class="headerlink" title="常见的压缩文件扩展名"></a>常见的压缩文件扩展名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">*.Z         compress 程序压缩的文件；</div><div class="line">*.gz        gzip 程序压缩的文件；</div><div class="line">*.bz2       bzip2 程序压缩的文件；</div><div class="line">*.tar       tar 程序打包的数据，并没有压缩过；</div><div class="line">*.tar.gz    tar 程序打包的文件，其中并且经过 gzip 的压缩</div><div class="line">*.tar.bz2   tar 程序打包的文件，其中并且经过 bzip2 的压缩</div></pre></td></tr></table></figure>
-<p>More info: <a href=""></a></p>
 <h3 id="文件压缩命令gzip"><a href="#文件压缩命令gzip" class="headerlink" title="文件压缩命令gzip"></a>文件压缩命令gzip</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[root@www ~]<span class="comment"># gzip [-cdtv#] 档名</span></div><div class="line">[root@www ~]<span class="comment"># zcat 档名.gz</span></div><div class="line">选项与参数：</div><div class="line">-c  ：将压缩的数据输出到萤幕上，可透过数据流重导向来处理；</div><div class="line"><span class="_">-d</span>  ：解压缩的参数；</div><div class="line">-t  ：可以用来检验一个压缩档的一致性～看看文件有无错误；</div><div class="line">-v  ：可以显示出原文件/压缩文件的压缩比等资讯；</div><div class="line">-<span class="comment">#  ：压缩等级，-1 最快，但是压缩比最差、-9 最慢，但是压缩比最好！默认是 -6</span></div></pre></td></tr></table></figure>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
@@ -358,15 +414,20 @@
       
         <p>Github 的搭建</p>
 <p>首先要下载安装以下两个程序：<br>下载 node.js：这个是用来生成静态网页的<br><a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a><br>下载 git：这个是推送 hexo的内容到github上的！<br><a href="https://git-scm.com/download/win" target="_blank" rel="external">https://git-scm.com/download/win</a> </p>
-<p>接下来就是执行命令安装 HEXO，首先在任意（D/E/F/G）盘里边创建一个文件夹（我创建了一个Git文件夹），之后再文件夹上右键点击Git Bash Here：<br><img src="https://github.com/LiuLangDelMao/LiuLangDelMao.github.io/blob/master/img/123/%E5%9B%BE%E7%89%871.png?raw=true" alt="image"></p>
-<p>打开后是命令行执行界面：<br><img src="https://github.com/LiuLangDelMao/LiuLangDelMao.github.io/blob/master/img/123/%E5%9B%BE%E7%89%872.png?raw=true" alt="image"><br>在窗口中输入命令：npm install -g hexo<br>初始化 hexo<br>命令：hexo init<br>生成静态的页面<br>命令：hexo g<br>启动本地服务进行查看<br>命令：hexo s<br>查看地址<br><a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a><br>接下来与 github 建立关联<br>找到 hexo 中的_config.yml 文件进行配置<br>Deploy：<br>Type: git<br>Repo: <a href="https://github.com/" target="_blank" rel="external">https://github.com/</a> 你的 github 地址<br>Branch: master<br>注意每一个：后边是有空格的<br>然后执行命令</p>
+<p>接下来就是执行命令安装 HEXO，首先在任意（D/E/F/G）盘里边创建一个文件夹（我创建了一个Git文件夹），之后再文件夹上右键点击Git Bash Here：</p>
+<p>打开后进入命令行执行界面</p>
+<p>在窗口中输入命令：npm install -g hexo<br>初始化 hexo<br>命令：hexo init<br>生成静态的页面<br>命令：hexo g<br>启动本地服务进行查看<br>命令：hexo s<br>查看地址<br><a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a><br>接下来与 github 建立关联<br>找到 hexo 中的_config.yml 文件进行配置<br>Deploy：<br>Type: git<br>Repo: <a href="https://github.com/" target="_blank" rel="external">https://github.com/</a> 你的 github 地址<br>Branch: master<br>注意每一个：后边是有空格的<br>然后执行命令</p>
 <p>命令：npm install hexo-deployer-git  - -save</p>
 <p>上边说的是 https 这种协议这种方法，这种方法每次推送的时候需要输入用户名和密码<br>也可以用 sshkey 这种协议方法，这种就不细说了，大家自行百度吧！<br>每次往 github 上推送部署需要执行以下命令：</p>
 <p>git config   - -global user.name “Your Name”<br>git config   - -global user.email “email@example.com”<br>npm install hexo-deployer-git  - -save<br>hexo g    部署<br>hexo d    推送</p>
 <p>Github搭建完成</p>
 <p>上传新的博客时，打开Git Bash Here，输入命令</p>
 <p>hexo new 文件名</p>
-<p>这个时候在\Git\source_posts文件夹下会自动生成 .md 后缀的文件<br><img src="https://github.com/LiuLangDelMao/LiuLangDelMao.github.io/blob/master/img/123/%E5%9B%BE%E7%89%873.png?raw=true" alt="image"><br>打开文件后，可在文件中添加内容，插入图片时，使用image标签<br>便可插入图片<br><img src="https://github.com/LiuLangDelMao/LiuLangDelMao.github.io/blob/master/img/123/%E5%9B%BE%E7%89%874.png?raw=true" alt="image"></p>
+<p>这个时候在\Git\source_posts文件夹下会自动生成 .md 后缀的文件</p>
+<p>打开文件后，可在文件中添加内容，插入图片时，使用image标签<br>便可插入图片</p>
+<blockquote>
+<p><img src="" alt="image"></p>
+</blockquote>
 <p>md文件编辑完后，打开Git Bash Here执行部署和推送命令<br>hexo g（部署）<br>hexo d（推送）</p>
 <p>关于如何上传图片至github<br>首先将图片放置Git\public 文件夹下的任意文夹中，然后打开Git Bash Here执行部署和推送命令<br>hexo g（部署）<br>hexo d（推送）<br>然后登陆github，找到上传的图片位置，打开图片，复制图片的链接地址</p>
 

