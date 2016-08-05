@@ -221,7 +221,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、配置防火墙，开启80、3306端口"><a href="#1、配置防火墙，开启80、3306端口" class="headerlink" title="1、配置防火墙，开启80、3306端口"></a>1、配置防火墙，开启80、3306端口</h3><blockquote>
+        <h2 id="1、配置防火墙，开启80、3306端口"><a href="#1、配置防火墙，开启80、3306端口" class="headerlink" title="1、配置防火墙，开启80、3306端口"></a>1、配置防火墙，开启80、3306端口</h2><blockquote>
 <p>vi /etc/sysconfig/iptables<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT</p>
 <p>#允许80端口通过防火墙<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT</p>
 <p>#允许3306端口通过防火墙<br>

@@ -18,7 +18,7 @@ vi /etc/sysconfig/iptables-A INPUT -m state –state NEW -m tcp -p tcp –dport 
 vi /etc/sysconfig/iptables-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT
 #允许80端口通过防火墙-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT
 #允许3306端口通过防火墙">
-<meta property="og:updated_time" content="2016-08-05T01:59:16.301Z">
+<meta property="og:updated_time" content="2016-08-05T02:08:17.864Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="系统安装LAMP">
 <meta name="twitter:description" content="1、配置防火墙，开启80、3306端口
@@ -239,31 +239,39 @@ vi /etc/sysconfig/iptables-A INPUT -m state –state NEW -m tcp -p tcp –dport 
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、配置防火墙，开启80、3306端口"><a href="#1、配置防火墙，开启80、3306端口" class="headerlink" title="1、配置防火墙，开启80、3306端口"></a>1、配置防火墙，开启80、3306端口</h3><blockquote>
+        <h2 id="1、配置防火墙，开启80、3306端口"><a href="#1、配置防火墙，开启80、3306端口" class="headerlink" title="1、配置防火墙，开启80、3306端口"></a>1、配置防火墙，开启80、3306端口</h2><blockquote>
 <p>vi /etc/sysconfig/iptables<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT</p>
 <p>#允许80端口通过防火墙<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT</p>
 <p>#允许3306端口通过防火墙<br><a id="more"></a></p>
 <p>###################################################################<br>[root@VM_90_202_centos ~]# vi /etc/sysconfig/iptables</p>
-<h1 id="Firewall-configuration-written-by-system-config-firewall"><a href="#Firewall-configuration-written-by-system-config-firewall" class="headerlink" title="Firewall configuration written by system-config-firewall"></a>Firewall configuration written by system-config-firewall</h1><h1 id="Manual-customization-of-this-file-is-not-recommended"><a href="#Manual-customization-of-this-file-is-not-recommended" class="headerlink" title="Manual customization of this file is not recommended."></a>Manual customization of this file is not recommended.</h1><p>*filter<br>:INPUT ACCEPT [0:0]<br>:FORWARD ACCEPT [0:0]<br>:OUTPUT ACCEPT [0:0]<br>-A INPUT -m state –state ESTABLISHED,RELATED -j ACCEPT<br>-A INPUT -p icmp -j ACCEPT<br>-A INPUT -i lo -j ACCEPT<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 22 -j ACCEPT<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT<br>-A INPUT -j REJECT –reject-with icmp-host-prohibited<br>-A FORWARD -j REJECT –reject-with icmp-host-prohibited<br>COMMIT</p>
+<p>#Firewall configuration written by system-config-firewall</p>
+<p>#Manual customization of this file is not recommended.<br>*filter<br>:INPUT ACCEPT [0:0]<br>:FORWARD ACCEPT [0:0]<br>:OUTPUT ACCEPT [0:0]<br>-A INPUT -m state –state ESTABLISHED,RELATED -j ACCEPT<br>-A INPUT -p icmp -j ACCEPT<br>-A INPUT -i lo -j ACCEPT<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 22 -j ACCEPT<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT<br>-A INPUT -j REJECT –reject-with icmp-host-prohibited<br>-A FORWARD -j REJECT –reject-with icmp-host-prohibited<br>COMMIT</p>
 <p>###################################################################</p>
 </blockquote>
-<h4 id="重启iptables，使配置生效"><a href="#重启iptables，使配置生效" class="headerlink" title="重启iptables，使配置生效"></a>重启iptables，使配置生效</h4><blockquote>
+<h3 id="重启iptables，使配置生效"><a href="#重启iptables，使配置生效" class="headerlink" title="重启iptables，使配置生效"></a>重启iptables，使配置生效</h3><blockquote>
 <p>/etc/init.d/iptables restart</p>
 </blockquote>
-<h3 id="2、关闭SELINUX"><a href="#2、关闭SELINUX" class="headerlink" title="2、关闭SELINUX"></a>2、关闭SELINUX</h3><blockquote>
-<p>vi /etc/selinux/config #编辑SELINUX的配置文件</p>
+<h2 id="2、关闭SELINUX"><a href="#2、关闭SELINUX" class="headerlink" title="2、关闭SELINUX"></a>2、关闭SELINUX</h2><blockquote>
+<p>vi /etc/selinux/config    #编辑SELINUX的配置文件</p>
 <p>#SELINUX=enforcing </p>
 <p>#SELINUXTYPE=targeted<br>SELINUX=disabled </p>
 <p>###################################################################</p>
-<h1 id="This-file-controls-the-state-of-SELinux-on-the-system"><a href="#This-file-controls-the-state-of-SELinux-on-the-system" class="headerlink" title="This file controls the state of SELinux on the system."></a>This file controls the state of SELinux on the system.</h1><h1 id="SELINUX-can-take-one-of-these-three-values"><a href="#SELINUX-can-take-one-of-these-three-values" class="headerlink" title="SELINUX= can take one of these three values:"></a>SELINUX= can take one of these three values:</h1><h1 id="enforcing-SELinux-security-policy-is-enforced"><a href="#enforcing-SELinux-security-policy-is-enforced" class="headerlink" title="enforcing - SELinux security policy is enforced."></a>enforcing - SELinux security policy is enforced.</h1><h1 id="permissive-SELinux-prints-warnings-instead-of-enforcing"><a href="#permissive-SELinux-prints-warnings-instead-of-enforcing" class="headerlink" title="permissive - SELinux prints warnings instead of enforcing."></a>permissive - SELinux prints warnings instead of enforcing.</h1><h1 id="disabled-No-SELinux-policy-is-loaded"><a href="#disabled-No-SELinux-policy-is-loaded" class="headerlink" title="disabled - No SELinux policy is loaded."></a>disabled - No SELinux policy is loaded.</h1><p>SELINUX=disabled</p>
-<h1 id="SELINUXTYPE-can-take-one-of-these-two-values"><a href="#SELINUXTYPE-can-take-one-of-these-two-values" class="headerlink" title="SELINUXTYPE= can take one of these two values:"></a>SELINUXTYPE= can take one of these two values:</h1><h1 id="targeted-Targeted-processes-are-protected"><a href="#targeted-Targeted-processes-are-protected" class="headerlink" title="targeted - Targeted processes are protected,"></a>targeted - Targeted processes are protected,</h1><h1 id="mls-Multi-Level-Security-protection"><a href="#mls-Multi-Level-Security-protection" class="headerlink" title="mls - Multi Level Security protection."></a>mls - Multi Level Security protection.</h1><p>#SELINUXTYPE=targeted</p>
+<p>#This file controls the state of SELinux on the system.</p>
+<p>#SELINUX= can take one of these three values:</p>
+<p>#enforcing - SELinux security policy is enforced.</p>
+<p>#permissive - SELinux prints warnings instead of enforcing.</p>
+<p>#disabled - No SELinux policy is loaded.<br>SELINUX=disabled</p>
+<p>#SELINUXTYPE= can take one of these two values:</p>
+<p>#targeted - Targeted processes are protected,</p>
+<p>#mls - Multi Level Security protection.</p>
+<p>#SELINUXTYPE=targeted</p>
 <p>###################################################################</p>
 </blockquote>
-<h4 id="保存退出后重启系统"><a href="#保存退出后重启系统" class="headerlink" title="保存退出后重启系统"></a>保存退出后重启系统</h4><blockquote>
+<h3 id="保存退出后重启系统"><a href="#保存退出后重启系统" class="headerlink" title="保存退出后重启系统"></a>保存退出后重启系统</h3><blockquote>
 <p>reboot</p>
 </blockquote>
-<h3 id="3、安装Apache"><a href="#3、安装Apache" class="headerlink" title="3、安装Apache"></a>3、安装Apache</h3><blockquote>
-<p>yum -y install httpd  #yum安装Apache<br>/etc/init.d/httpd start #启动Apache</p>
+<h2 id="3、安装Apache"><a href="#3、安装Apache" class="headerlink" title="3、安装Apache"></a>3、安装Apache</h2><blockquote>
+<p>yum -y install httpd    #yum安装Apache<br>/etc/init.d/httpd start     #启动Apache</p>
 <p>###################################################################<br>[root@VM_90_202_centos ~]# /etc/init.d/httpd start<br>Starting httpd: httpd: Could not reliably determine the server’s fully qualified domain name, using 127.0.0.1 for ServerName</p>
 <p>###################################################################</p>
 </blockquote>
@@ -271,21 +279,31 @@ vi /etc/sysconfig/iptables-A INPUT -m state –state NEW -m tcp -p tcp –dport 
 <blockquote>
 <p>vi /etc/httpd/conf/httpd.conf #编辑Apache配置文件<br>找到#ServerName www.example.com:80<br>更改为 #ServerName www.自己的域名.com:80 #没有域名则更改为localhost:80<br>保存退出后，将Apache设置为开机启动<br>chkconfig httpd on #将Apache设置为开机启动<br>/etc/init.d/httpd restart #重启Apache</p>
 </blockquote>
-<h3 id="4、安装MySQL"><a href="#4、安装MySQL" class="headerlink" title="4、安装MySQL"></a>4、安装MySQL</h3><blockquote>
-<p>yum install -y mysql mysql-server #安装MySQL<br>/etc/init.d/mysqld start #启动MySQL<br>chkconfig mysqld on #设为开机启动<br>cp /usr/share/mysql/my-medium.cnf /etc/my.cnf #拷贝配置文件<br>注意：如果/etc目录下有默认一个默认的my.cnf文件，直接回车覆盖掉即可</p>
+<h2 id="4、安装MySQL"><a href="#4、安装MySQL" class="headerlink" title="4、安装MySQL"></a>4、安装MySQL</h2><blockquote>
+<p>yum install -y mysql mysql-server #安装MySQL<br>/etc/init.d/mysqld start #启动MySQL<br>chkconfig mysqld on #设为开机启动<br>cp /usr/share/mysql/my-medium.cnf /etc/my.cnf #拷贝配置文件</p>
+</blockquote>
+<p>注意：如果/etc目录下有默认一个默认的my.cnf文件，直接回车覆盖掉即可</p>
+<blockquote>
 <p>###################################################################<br>[root@VM_90_202_centos ~]# cp /usr/share/mysql/my-medium.cnf /etc/my.cnf<br>cp: overwrite `/etc/my.cnf’? </p>
 <p>###################################################################</p>
 </blockquote>
-<h4 id="设置root密码"><a href="#设置root密码" class="headerlink" title="设置root密码"></a>设置root密码</h4><blockquote>
-<p>mysql_secure_installation<br>根据提示输入y<br>其中要输入2次密码</p>
-<h4 id="MySQL密码设置完成后重启MySQL"><a href="#MySQL密码设置完成后重启MySQL" class="headerlink" title="MySQL密码设置完成后重启MySQL"></a>MySQL密码设置完成后重启MySQL</h4><p>/etc/init.d/mysqld restart #重启MySQL</p>
+<h3 id="设置root密码"><a href="#设置root密码" class="headerlink" title="设置root密码"></a>设置root密码</h3><blockquote>
+<p>mysql_secure_installation</p>
 </blockquote>
-<h3 id="5、安装PHP5"><a href="#5、安装PHP5" class="headerlink" title="5、安装PHP5"></a>5、安装PHP5</h3><blockquote>
+<p>根据提示输入y<br>其中要输入2次密码</p>
+<h4 id="MySQL密码设置完成后重启MySQL"><a href="#MySQL密码设置完成后重启MySQL" class="headerlink" title="MySQL密码设置完成后重启MySQL"></a>MySQL密码设置完成后重启MySQL</h4><blockquote>
+<p>/etc/init.d/mysqld restart #重启MySQL</p>
+</blockquote>
+<h2 id="5、安装PHP5"><a href="#5、安装PHP5" class="headerlink" title="5、安装PHP5"></a>5、安装PHP5</h2><blockquote>
 <p>yum install -y php #安装PHP</p>
-<h4 id="安装PHP组件，使-PHP支持-MySQL"><a href="#安装PHP组件，使-PHP支持-MySQL" class="headerlink" title="安装PHP组件，使 PHP支持 MySQL"></a>安装PHP组件，使 PHP支持 MySQL</h4><p>yum install -y php-mysql php-gd libjpeg* php-imap php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-mcrypt php-bcmath php-mhash libmcrypt</p>
-<h4 id="安装完成后重启Apache、MySQL"><a href="#安装完成后重启Apache、MySQL" class="headerlink" title="安装完成后重启Apache、MySQL"></a>安装完成后重启Apache、MySQL</h4><p>/etc/init.d/mysqld restart<br>/etc/init.d/httpd restart</p>
 </blockquote>
-<h4 id="CentOS-6-5-系统下的LAMP服务器搭建完成，可根据自己的具体情况对PHP、MySQL、Apache的配置文件做具体的修改，修改前最好将原有配置文件进行备份，以防文件出错"><a href="#CentOS-6-5-系统下的LAMP服务器搭建完成，可根据自己的具体情况对PHP、MySQL、Apache的配置文件做具体的修改，修改前最好将原有配置文件进行备份，以防文件出错" class="headerlink" title="CentOS 6.5 系统下的LAMP服务器搭建完成，可根据自己的具体情况对PHP、MySQL、Apache的配置文件做具体的修改，修改前最好将原有配置文件进行备份，以防文件出错"></a>CentOS 6.5 系统下的LAMP服务器搭建完成，可根据自己的具体情况对PHP、MySQL、Apache的配置文件做具体的修改，修改前最好将原有配置文件进行备份，以防文件出错</h4>
+<h3 id="安装PHP组件，使-PHP支持-MySQL"><a href="#安装PHP组件，使-PHP支持-MySQL" class="headerlink" title="安装PHP组件，使 PHP支持 MySQL"></a>安装PHP组件，使 PHP支持 MySQL</h3><blockquote>
+<p>yum install -y php-mysql php-gd libjpeg* php-imap php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-mcrypt php-bcmath php-mhash libmcrypt</p>
+</blockquote>
+<h3 id="安装完成后重启Apache、MySQL"><a href="#安装完成后重启Apache、MySQL" class="headerlink" title="安装完成后重启Apache、MySQL"></a>安装完成后重启Apache、MySQL</h3><blockquote>
+<p>/etc/init.d/mysqld restart<br>/etc/init.d/httpd restart</p>
+</blockquote>
+<h3 id="CentOS-6-5-系统下的LAMP服务器搭建完成，可根据自己的具体情况对PHP、MySQL、Apache的配置文件做具体的修改，修改前最好将原有配置文件进行备份，以防文件出错"><a href="#CentOS-6-5-系统下的LAMP服务器搭建完成，可根据自己的具体情况对PHP、MySQL、Apache的配置文件做具体的修改，修改前最好将原有配置文件进行备份，以防文件出错" class="headerlink" title="CentOS 6.5 系统下的LAMP服务器搭建完成，可根据自己的具体情况对PHP、MySQL、Apache的配置文件做具体的修改，修改前最好将原有配置文件进行备份，以防文件出错"></a>CentOS 6.5 系统下的LAMP服务器搭建完成，可根据自己的具体情况对PHP、MySQL、Apache的配置文件做具体的修改，修改前最好将原有配置文件进行备份，以防文件出错</h3>
       
     </div>
     
