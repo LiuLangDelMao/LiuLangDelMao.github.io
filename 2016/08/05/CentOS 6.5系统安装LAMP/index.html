@@ -18,7 +18,7 @@ vi /etc/sysconfig/iptables-A INPUT -m state –state NEW -m tcp -p tcp –dport 
 vi /etc/sysconfig/iptables-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT
 #允许80端口通过防火墙-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT
 #允许3306端口通过防火墙">
-<meta property="og:updated_time" content="2016-08-05T02:10:12.026Z">
+<meta property="og:updated_time" content="2016-08-05T02:24:51.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 6.5系统安装LAMP">
 <meta name="twitter:description" content="1、配置防火墙，开启80、3306端口
@@ -87,7 +87,7 @@ vi /etc/sysconfig/iptables-A INPUT -m state –state NEW -m tcp -p tcp –dport 
 						<li>Links</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -243,39 +243,50 @@ vi /etc/sysconfig/iptables-A INPUT -m state –state NEW -m tcp -p tcp –dport 
 <p>vi /etc/sysconfig/iptables<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT</p>
 <p>#允许80端口通过防火墙<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT</p>
 <p>#允许3306端口通过防火墙<br><a id="more"></a></p>
-<p>###################################################################<br>[root@VM_90_202_centos ~]# vi /etc/sysconfig/iptables</p>
-<p>#Firewall configuration written by system-config-firewall</p>
-<p>#Manual customization of this file is not recommended.<br>*filter<br>:INPUT ACCEPT [0:0]<br>:FORWARD ACCEPT [0:0]<br>:OUTPUT ACCEPT [0:0]<br>-A INPUT -m state –state ESTABLISHED,RELATED -j ACCEPT<br>-A INPUT -p icmp -j ACCEPT<br>-A INPUT -i lo -j ACCEPT<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 22 -j ACCEPT<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT<br>-A INPUT -j REJECT –reject-with icmp-host-prohibited<br>-A FORWARD -j REJECT –reject-with icmp-host-prohibited<br>COMMIT</p>
-<p>###################################################################</p>
 </blockquote>
-<h3 id="重启iptables，使配置生效"><a href="#重启iptables，使配置生效" class="headerlink" title="重启iptables，使配置生效"></a>重启iptables，使配置生效</h3><blockquote>
+<pre><code>[root@VM_90_202_centos ~]# vi /etc/sysconfig/iptables
+#Firewall configuration written by system-config-firewall
+#Manual customization of this file is not recommended.
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A INPUT -p icmp -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited
+COMMIT
+</code></pre><h3 id="重启iptables，使配置生效"><a href="#重启iptables，使配置生效" class="headerlink" title="重启iptables，使配置生效"></a>重启iptables，使配置生效</h3><blockquote>
 <p>/etc/init.d/iptables restart</p>
 </blockquote>
 <h2 id="2、关闭SELINUX"><a href="#2、关闭SELINUX" class="headerlink" title="2、关闭SELINUX"></a>2、关闭SELINUX</h2><blockquote>
 <p>vi /etc/selinux/config    #编辑SELINUX的配置文件</p>
 <p>#SELINUX=enforcing </p>
 <p>#SELINUXTYPE=targeted<br>SELINUX=disabled </p>
-<p>###################################################################</p>
-<p>#This file controls the state of SELinux on the system.</p>
-<p>#SELINUX= can take one of these three values:</p>
-<p>#enforcing - SELinux security policy is enforced.</p>
-<p>#permissive - SELinux prints warnings instead of enforcing.</p>
-<p>#disabled - No SELinux policy is loaded.<br>SELINUX=disabled</p>
-<p>#SELINUXTYPE= can take one of these two values:</p>
-<p>#targeted - Targeted processes are protected,</p>
-<p>#mls - Multi Level Security protection.</p>
-<p>#SELINUXTYPE=targeted</p>
-<p>###################################################################</p>
 </blockquote>
-<h3 id="保存退出后重启系统"><a href="#保存退出后重启系统" class="headerlink" title="保存退出后重启系统"></a>保存退出后重启系统</h3><blockquote>
+<pre><code>#This file controls the state of SELinux on the system.
+#SELINUX= can take one of these three values:
+#enforcing - SELinux security policy is enforced.
+#permissive - SELinux prints warnings instead of enforcing.
+#disabled - No SELinux policy is loaded.
+SELINUX=disabled
+#SELINUXTYPE= can take one of these two values:
+#targeted - Targeted processes are protected,
+#mls - Multi Level Security protection.
+#SELINUXTYPE=targeted
+</code></pre><h3 id="保存退出后重启系统"><a href="#保存退出后重启系统" class="headerlink" title="保存退出后重启系统"></a>保存退出后重启系统</h3><blockquote>
 <p>reboot</p>
 </blockquote>
 <h2 id="3、安装Apache"><a href="#3、安装Apache" class="headerlink" title="3、安装Apache"></a>3、安装Apache</h2><blockquote>
 <p>yum -y install httpd    #yum安装Apache<br>/etc/init.d/httpd start     #启动Apache</p>
-<p>###################################################################<br>[root@VM_90_202_centos ~]# /etc/init.d/httpd start<br>Starting httpd: httpd: Could not reliably determine the server’s fully qualified domain name, using 127.0.0.1 for ServerName</p>
-<p>###################################################################</p>
 </blockquote>
-<p>这里系统会提示你无法可靠地确定服务器限定的网络域名<br>解决方法：找到Apache的配置文件，更改为自己的域名，如果没有域名则设置为localhost</p>
+<pre><code>[root@VM_90_202_centos ~]# /etc/init.d/httpd start
+Starting httpd: httpd: Could not reliably determine the server&apos;s fully qualified domain name, using 127.0.0.1 for ServerName
+</code></pre><p>这里系统会提示你无法可靠地确定服务器限定的网络域名<br>解决方法：找到Apache的配置文件，更改为自己的域名，如果没有域名则设置为localhost</p>
 <blockquote>
 <p>vi /etc/httpd/conf/httpd.conf #编辑Apache配置文件<br>找到#ServerName www.example.com:80<br>更改为 #ServerName www.自己的域名.com:80 #没有域名则更改为localhost:80<br>保存退出后，将Apache设置为开机启动<br>chkconfig httpd on #将Apache设置为开机启动<br>/etc/init.d/httpd restart #重启Apache</p>
 </blockquote>
@@ -283,11 +294,9 @@ vi /etc/sysconfig/iptables-A INPUT -m state –state NEW -m tcp -p tcp –dport 
 <p>yum install -y mysql mysql-server #安装MySQL<br>/etc/init.d/mysqld start #启动MySQL<br>chkconfig mysqld on #设为开机启动<br>cp /usr/share/mysql/my-medium.cnf /etc/my.cnf #拷贝配置文件</p>
 </blockquote>
 <p>注意：如果/etc目录下有默认一个默认的my.cnf文件，直接回车覆盖掉即可</p>
-<blockquote>
-<p>###################################################################<br>[root@VM_90_202_centos ~]# cp /usr/share/mysql/my-medium.cnf /etc/my.cnf<br>cp: overwrite `/etc/my.cnf’? </p>
-<p>###################################################################</p>
-</blockquote>
-<h3 id="设置root密码"><a href="#设置root密码" class="headerlink" title="设置root密码"></a>设置root密码</h3><blockquote>
+<pre><code>[root@VM_90_202_centos ~]# cp /usr/share/mysql/my-medium.cnf /etc/my.cnf
+cp: overwrite `/etc/my.cnf&apos;? 
+</code></pre><h3 id="设置root密码"><a href="#设置root密码" class="headerlink" title="设置root密码"></a>设置root密码</h3><blockquote>
 <p>mysql_secure_installation</p>
 </blockquote>
 <p>根据提示输入y<br>其中要输入2次密码</p>
