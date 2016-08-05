@@ -195,6 +195,65 @@
 
       <div class="body-wrap">
   
+    <article id="centos-CentOS 6.5系统安装LAMP" class="article article-type-centos" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/05/CentOS 6.5系统安装LAMP/" class="article-date">
+  	<time datetime="2016-08-05T01:58:36.000Z" itemprop="datePublished">2016-08-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/05/CentOS 6.5系统安装LAMP/">系统安装LAMP</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、配置防火墙，开启80、3306端口"><a href="#1、配置防火墙，开启80、3306端口" class="headerlink" title="1、配置防火墙，开启80、3306端口"></a>1、配置防火墙，开启80、3306端口</h3><blockquote>
+<p>vi /etc/sysconfig/iptables<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT</p>
+<p>#允许80端口通过防火墙<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT</p>
+<p>#允许3306端口通过防火墙<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/08/05/CentOS 6.5系统安装LAMP/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-更改yum源" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -430,9 +489,6 @@
 <p>hexo new 文件名</p>
 <p>这个时候在\Git\source_posts文件夹下会自动生成 .md 后缀的文件</p>
 <p>打开文件后，可在文件中添加内容，插入图片时，使用image标签<br>便可插入图片</p>
-<blockquote>
-<p>！[ image ]（图片的链接地址）</p>
-</blockquote>
 <p>md文件编辑完后，打开Git Bash Here执行部署和推送命令<br>hexo g（部署）<br>hexo d（推送）</p>
 <p>关于如何上传图片至github<br>首先将图片放置Git\public 文件夹下的任意文夹中，然后打开Git Bash Here执行部署和推送命令<br>hexo g（部署）<br>hexo d（推送）<br>然后登陆github，找到上传的图片位置，打开图片，复制图片的链接地址</p>
 
