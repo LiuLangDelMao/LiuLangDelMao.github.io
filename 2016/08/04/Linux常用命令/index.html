@@ -6,16 +6,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Linux常用命令（1） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="文件的压缩常见的压缩文件扩展名123456*.Z         compress 程序压缩的文件；*.gz        gzip 程序压缩的文件；*.bz2       bzip2 程序压缩的文件；*.tar       tar 程序打包的数据，并没有压缩过；*.tar.gz    tar 程序打包的文件，其中并且经过 gzip 的压缩*.tar.bz2   tar 程序打包的文件，其中并且经">
+  <meta name="description" content="文件的压缩常见的压缩文件扩展名*.Z         compress 程序压缩的文件；
+*.gz        gzip 程序压缩的文件；
+*.bz2       bzip2 程序压缩的文件；
+*.tar       tar 程序打包的数据，并没有压缩过；
+*.tar.gz    tar 程序打包的文件，其中并且经过 gzip 的压缩
+*.tar.bz2   tar 程序打包的文件，其中并且经过">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux常用命令（1）">
 <meta property="og:url" content="http://yoursite.com/2016/08/04/Linux常用命令/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="文件的压缩常见的压缩文件扩展名123456*.Z         compress 程序压缩的文件；*.gz        gzip 程序压缩的文件；*.bz2       bzip2 程序压缩的文件；*.tar       tar 程序打包的数据，并没有压缩过；*.tar.gz    tar 程序打包的文件，其中并且经过 gzip 的压缩*.tar.bz2   tar 程序打包的文件，其中并且经">
-<meta property="og:updated_time" content="2016-08-04T09:11:37.483Z">
+<meta property="og:description" content="文件的压缩常见的压缩文件扩展名*.Z         compress 程序压缩的文件；
+*.gz        gzip 程序压缩的文件；
+*.bz2       bzip2 程序压缩的文件；
+*.tar       tar 程序打包的数据，并没有压缩过；
+*.tar.gz    tar 程序打包的文件，其中并且经过 gzip 的压缩
+*.tar.bz2   tar 程序打包的文件，其中并且经过">
+<meta property="og:updated_time" content="2016-08-05T02:17:46.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用命令（1）">
-<meta name="twitter:description" content="文件的压缩常见的压缩文件扩展名123456*.Z         compress 程序压缩的文件；*.gz        gzip 程序压缩的文件；*.bz2       bzip2 程序压缩的文件；*.tar       tar 程序打包的数据，并没有压缩过；*.tar.gz    tar 程序打包的文件，其中并且经过 gzip 的压缩*.tar.bz2   tar 程序打包的文件，其中并且经">
+<meta name="twitter:description" content="文件的压缩常见的压缩文件扩展名*.Z         compress 程序压缩的文件；
+*.gz        gzip 程序压缩的文件；
+*.bz2       bzip2 程序压缩的文件；
+*.tar       tar 程序打包的数据，并没有压缩过；
+*.tar.gz    tar 程序打包的文件，其中并且经过 gzip 的压缩
+*.tar.bz2   tar 程序打包的文件，其中并且经过">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -78,7 +93,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -230,12 +245,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="文件的压缩"><a href="#文件的压缩" class="headerlink" title="文件的压缩"></a>文件的压缩</h2><h3 id="常见的压缩文件扩展名"><a href="#常见的压缩文件扩展名" class="headerlink" title="常见的压缩文件扩展名"></a>常见的压缩文件扩展名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">*.Z         compress 程序压缩的文件；</div><div class="line">*.gz        gzip 程序压缩的文件；</div><div class="line">*.bz2       bzip2 程序压缩的文件；</div><div class="line">*.tar       tar 程序打包的数据，并没有压缩过；</div><div class="line">*.tar.gz    tar 程序打包的文件，其中并且经过 gzip 的压缩</div><div class="line">*.tar.bz2   tar 程序打包的文件，其中并且经过 bzip2 的压缩</div></pre></td></tr></table></figure>
-<h3 id="文件压缩命令gzip"><a href="#文件压缩命令gzip" class="headerlink" title="文件压缩命令gzip"></a>文件压缩命令gzip</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[root@www ~]<span class="comment"># gzip [-cdtv#] 档名</span></div><div class="line">[root@www ~]<span class="comment"># zcat 档名.gz</span></div><div class="line">选项与参数：</div><div class="line">-c  ：将压缩的数据输出到萤幕上，可透过数据流重导向来处理；</div><div class="line"><span class="_">-d</span>  ：解压缩的参数；</div><div class="line">-t  ：可以用来检验一个压缩档的一致性～看看文件有无错误；</div><div class="line">-v  ：可以显示出原文件/压缩文件的压缩比等资讯；</div><div class="line">-<span class="comment">#  ：压缩等级，-1 最快，但是压缩比最差、-9 最慢，但是压缩比最好！默认是 -6</span></div></pre></td></tr></table></figure>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h2 id="文件的压缩"><a href="#文件的压缩" class="headerlink" title="文件的压缩"></a>文件的压缩</h2><h3 id="常见的压缩文件扩展名"><a href="#常见的压缩文件扩展名" class="headerlink" title="常见的压缩文件扩展名"></a>常见的压缩文件扩展名</h3><pre><code>*.Z         compress 程序压缩的文件；
+*.gz        gzip 程序压缩的文件；
+*.bz2       bzip2 程序压缩的文件；
+*.tar       tar 程序打包的数据，并没有压缩过；
+*.tar.gz    tar 程序打包的文件，其中并且经过 gzip 的压缩
+*.tar.bz2   tar 程序打包的文件，其中并且经过 bzip2 的压缩
+</code></pre><a id="more"></a>
+<h3 id="文件压缩命令gzip"><a href="#文件压缩命令gzip" class="headerlink" title="文件压缩命令gzip"></a>文件压缩命令gzip</h3><pre><code>[root@www ~]# gzip [-cdtv#] 档名
+[root@www ~]# zcat 档名.gz
+选项与参数：
+-c  ：将压缩的数据输出到萤幕上，可透过数据流重导向来处理；
+-d  ：解压缩的参数；
+-t  ：可以用来检验一个压缩档的一致性～看看文件有无错误；
+-v  ：可以显示出原文件/压缩文件的压缩比等资讯；
+-#  ：压缩等级，-1 最快，但是压缩比最差、-9 最慢，但是压缩比最好！默认是 -6
+</code></pre><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code>$ hexo generate
+</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code>$ hexo deploy
+</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
       
     </div>
