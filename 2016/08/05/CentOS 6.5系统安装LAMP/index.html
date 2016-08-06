@@ -7,24 +7,18 @@
   <title>CentOS 6.5系统安装LAMP | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1、配置防火墙，开启80、3306端口
-vi /etc/sysconfig/iptables-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT
-#允许80端口通过防火墙-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT
-#允许3306端口通过防火墙">
+vi /etc/sysconfig/iptables-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT        #允许80端口通过防火墙-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS 6.5系统安装LAMP">
 <meta property="og:url" content="http://yoursite.com/2016/08/05/CentOS 6.5系统安装LAMP/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1、配置防火墙，开启80、3306端口
-vi /etc/sysconfig/iptables-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT
-#允许80端口通过防火墙-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT
-#允许3306端口通过防火墙">
-<meta property="og:updated_time" content="2016-08-05T02:24:51.995Z">
+vi /etc/sysconfig/iptables-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT        #允许80端口通过防火墙-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT">
+<meta property="og:updated_time" content="2016-08-05T02:26:49.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 6.5系统安装LAMP">
 <meta name="twitter:description" content="1、配置防火墙，开启80、3306端口
-vi /etc/sysconfig/iptables-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT
-#允许80端口通过防火墙-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT
-#允许3306端口通过防火墙">
+vi /etc/sysconfig/iptables-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT        #允许80端口通过防火墙-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -240,9 +234,7 @@ vi /etc/sysconfig/iptables-A INPUT -m state –state NEW -m tcp -p tcp –dport 
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="1、配置防火墙，开启80、3306端口"><a href="#1、配置防火墙，开启80、3306端口" class="headerlink" title="1、配置防火墙，开启80、3306端口"></a>1、配置防火墙，开启80、3306端口</h2><blockquote>
-<p>vi /etc/sysconfig/iptables<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT</p>
-<p>#允许80端口通过防火墙<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT</p>
-<p>#允许3306端口通过防火墙<br><a id="more"></a></p>
+<p>vi /etc/sysconfig/iptables<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 80 -j ACCEPT        #允许80端口通过防火墙<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT        #允许3306端口通过防火墙<br><a id="more"></a></p>
 </blockquote>
 <pre><code>[root@VM_90_202_centos ~]# vi /etc/sysconfig/iptables
 #Firewall configuration written by system-config-firewall
