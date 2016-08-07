@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/08/07/CentOS6-5系统下安装Tomcat/index.html">
 <meta property="og:site_name" content="浪迹の天涯">
 <meta property="og:description" content="CentOS 6.5系统下安装TomcatTomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。对于一个初学者来说，可以这样认为，当在一台机器上配置好Apache 服务器，可利用它响应对HTML 页面的访问请求。实际上Tomcat 部分是Apache 服务器的扩展，但它是独立运行的">
-<meta property="og:updated_time" content="2016-08-07T04:57:39.349Z">
+<meta property="og:updated_time" content="2016-08-07T04:59:07.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS6.5系统安装Tomcat">
 <meta name="twitter:description" content="CentOS 6.5系统下安装TomcatTomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。对于一个初学者来说，可以这样认为，当在一台机器上配置好Apache 服务器，可利用它响应对HTML 页面的访问请求。实际上Tomcat 部分是Apache 服务器的扩展，但它是独立运行的">
@@ -270,15 +270,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 24.79-b02, mixed mode)
 <user username="tomcat" password="tomcat" roles="manager-gui">
 
 </user></blockquote>
-<pre><code>&lt;role rolename=&quot;tomcat&quot;/&gt;
-&lt;role rolename=&quot;role1&quot;/&gt;
-&lt;user username=&quot;tomcat&quot; password=&quot;&lt;must-be-changed&gt;&quot; roles=&quot;tomcat&quot;/&gt;
-&lt;user username=&quot;both&quot; password=&quot;&lt;must-be-changed&gt;&quot; roles=&quot;tomcat,role1&quot;/&gt;
-&lt;user username=&quot;role1&quot; password=&quot;&lt;must-be-changed&gt;&quot; roles=&quot;role1&quot;/&gt;
-&lt;role rolename=&quot;manager-gui&quot; /&gt;
-&lt;user username=&quot;tomcat&quot; password=&quot;tomcat&quot; roles=&quot;manager-gui&quot;/&gt;
-&lt;/tomcat-users&gt;
-</code></pre><h3 id="2、在-opt-tomcat-conf-Catalina-localhost目录下创建Manager-xml文件，并在文件中添加："><a href="#2、在-opt-tomcat-conf-Catalina-localhost目录下创建Manager-xml文件，并在文件中添加：" class="headerlink" title="2、在/opt/tomcat/conf/Catalina/localhost目录下创建Manager.xml文件，并在文件中添加："></a>2、在/opt/tomcat/conf/Catalina/localhost目录下创建Manager.xml文件，并在文件中添加：</h3><pre><code>&lt;Context privileged=&quot;true&quot; antiResouceLocking=&quot;false&quot;
+<p>配置文件：<br>    <role rolename="tomcat"><br>    <role rolename="role1"><br>    <user username="tomcat" password="<must-be-changed>" roles="tomcat"><br>    <user username="both" password="<must-be-changed>" roles="tomcat,role1"><br>    <user username="role1" password="<must-be-changed>" roles="role1"><br>    <role rolename="manager-gui"><br>    <user username="tomcat" password="tomcat" roles="manager-gui"><br>    </user></role></user></user></user></role></role></p>
+<h3 id="2、在-opt-tomcat-conf-Catalina-localhost目录下创建Manager-xml文件，并在文件中添加："><a href="#2、在-opt-tomcat-conf-Catalina-localhost目录下创建Manager-xml文件，并在文件中添加：" class="headerlink" title="2、在/opt/tomcat/conf/Catalina/localhost目录下创建Manager.xml文件，并在文件中添加："></a>2、在/opt/tomcat/conf/Catalina/localhost目录下创建Manager.xml文件，并在文件中添加：</h3><pre><code>&lt;Context privileged=&quot;true&quot; antiResouceLocking=&quot;false&quot;
         docBase=&quot;${catlina.home}/webapps/manager&quot;&gt;
         &lt;Value className=&quot;org.apache.catalina.valves.RemoteAddValue&quot; allow=&quot;^.*$&quot; /&gt;
 &lt;/Context&gt;
