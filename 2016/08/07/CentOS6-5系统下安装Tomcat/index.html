@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/08/07/CentOS6-5系统下安装Tomcat/index.html">
 <meta property="og:site_name" content="浪迹の天涯">
 <meta property="og:description" content="CentOS 6.5系统下安装TomcatTomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。对于一个初学者来说，可以这样认为，当在一台机器上配置好Apache 服务器，可利用它响应对HTML 页面的访问请求。实际上Tomcat 部分是Apache 服务器的扩展，但它是独立运行的">
-<meta property="og:updated_time" content="2016-08-07T04:54:52.191Z">
+<meta property="og:updated_time" content="2016-08-07T04:56:36.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS6.5系统安装Tomcat">
 <meta name="twitter:description" content="CentOS 6.5系统下安装TomcatTomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。对于一个初学者来说，可以这样认为，当在一台机器上配置好Apache 服务器，可利用它响应对HTML 页面的访问请求。实际上Tomcat 部分是Apache 服务器的扩展，但它是独立运行的">
@@ -78,7 +78,7 @@
 						<li>Links</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -266,7 +266,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 24.79-b02, mixed mode)
 </blockquote>
 <p>以上两种方法都可以访问，一般情况下不推荐后一种方法，如果是在虚拟机中搭建环境测试的话，可以先暂时关闭防火墙进行访问，一般情况下最好是通过添加防火墙策略访问</p>
 <h2 id="三、修改配置文件"><a href="#三、修改配置文件" class="headerlink" title="三、修改配置文件"></a>三、修改配置文件</h2><h3 id="1、在-opt-tomcat-conf-tomcat-users-xml文件最后添加以下两行配置信息"><a href="#1、在-opt-tomcat-conf-tomcat-users-xml文件最后添加以下两行配置信息" class="headerlink" title="1、在/opt/tomcat/conf/tomcat-users.xml文件最后添加以下两行配置信息"></a>1、在/opt/tomcat/conf/tomcat-users.xml文件最后添加以下两行配置信息</h3><blockquote>
-<p><code>&lt;role rolename=&quot;manager-gui&quot; /&gt;</code><user username="tomcat" password="tomcat" roles="manager-gui"><br>    <role rolename="tomcat"><br>    <role rolename="role1"><br>    <user username="tomcat" password="<must-be-changed>" roles="tomcat"><br>    <user username="both" password="<must-be-changed>" roles="tomcat,role1"><br>    <user username="role1" password="<must-be-changed>" roles="role1"><br>    <role rolename="manager-gui"><br>    <user username="tomcat" password="tomcat" roles="manager-gui"><br>    </user></role></user></user></user></role></role></user></p>
+<p>`<role rolename="manager-gui"></role></p>
+<p><user username="tomcat" password="tomcat" roles="manager-gui">`<br>    <role rolename="tomcat"><br>    <role rolename="role1"><br>    <user username="tomcat" password="<must-be-changed>" roles="tomcat"><br>    <user username="both" password="<must-be-changed>" roles="tomcat,role1"><br>    <user username="role1" password="<must-be-changed>" roles="role1"><br>    <role rolename="manager-gui"><br>    <user username="tomcat" password="tomcat" roles="manager-gui"><br>    </user></role></user></user></user></role></role></user></p>
 </blockquote>
 <h3 id="2、在-opt-tomcat-conf-Catalina-localhost目录下创建Manager-xml文件，并在文件中添加："><a href="#2、在-opt-tomcat-conf-Catalina-localhost目录下创建Manager-xml文件，并在文件中添加：" class="headerlink" title="2、在/opt/tomcat/conf/Catalina/localhost目录下创建Manager.xml文件，并在文件中添加："></a>2、在/opt/tomcat/conf/Catalina/localhost目录下创建Manager.xml文件，并在文件中添加：</h3><pre><code>&lt;Context privileged=&quot;true&quot; antiResouceLocking=&quot;false&quot;
         docBase=&quot;${catlina.home}/webapps/manager&quot;&gt;
